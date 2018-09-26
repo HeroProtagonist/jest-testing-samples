@@ -4,7 +4,7 @@ jest.mock('fs')
 const emojiAdd = require('./')
 
 describe('emojiAdd', () => {
-  it('surronds file in an emojis', () => {
+  it('appends emoji to end of file', () => {
     const filePath = '/path/to/index.js'
     const emoji = '🐉'
 
