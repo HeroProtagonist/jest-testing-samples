@@ -14,15 +14,9 @@ app.get('/trivia/:amount', async (req, res) => {
     return res.send('Invalid amount - please enter a number')
   }
 
-  let data
-  let json
 
-  try {
-    data = await fetch(`https://opentdb.com/api.php?amount=${amount}`)
-    json = await data.json()
-  } catch (e) {
-    return res.send(e)
-  }
+  const data = await fetch(`https://opentdb.com/api.php?amount=${amount}`)
+  const json = await data.json()
 
   return res.send(json)
 })
